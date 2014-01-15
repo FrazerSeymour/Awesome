@@ -9,7 +9,8 @@ if __name__ == "__main__":
     copytree(expanduser('~')+"/.config/awesome", "./awesome")
 
     try:
-        call(["git", "commit", "-am", raw_input("Commit Message: ")])
+        call(["git", "add", "-A"])
+        call(["git", "commit", "-m", raw_input("Commit Message: ")])
         call(["git", "push"])
         print "Update complete!"
     except:
