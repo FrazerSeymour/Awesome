@@ -9,8 +9,8 @@ if __name__ == "__main__":
     copytree(expanduser('~')+"/.config/awesome", "./awesome")
 
     try:
-        call(["hg", "commit", "-A", "-m", raw_input("Commit Message: ")])
-        call(["hg", "push", "ssh://hg@bitbucket.org/FrazerS/awesome-stuff"])
-        print "Update comlete!"
+        call(["git", "commit", "-am", raw_input("Commit Message: ")])
+        call(["git", "push"])
+        print "Update complete!"
     except:
         print "Something went wrong. :/"
