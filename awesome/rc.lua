@@ -296,6 +296,7 @@ globalkeys = awful.util.table.join(
                                                         awful.tag.viewonly(tags[1][3])
                                                     end,                                    "Open Browser"),
     awful.key({ modkey,             },  "w",        function ()
+                                                        awful.tag.viewonly(tags[1][5])
                                                         awful.util.spawn("plasma-windowed org.kde.networkmanagement")
                                                     end,                                    "Open NetworkManager"),
     awful.key({                     },  "Print",    function ()
