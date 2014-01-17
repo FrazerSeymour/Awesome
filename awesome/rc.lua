@@ -301,7 +301,12 @@ globalkeys = awful.util.table.join(
     awful.key({                     },  "Print",    function ()
                                                         awful.util.spawn("ksnapshot")
                                                     end,                                    "PrintScreen Functionality."),
-    awful.key({                     },  "#133",     function () mymainmenu:toggle() end,    "'Windows' key toggles launcher."),
+    awful.key({                     },  "#133",     function ()
+                                                        mymainmenu:toggle()
+                                                    end,                                    "'Windows' key toggles launcher."),
+    awful.key({                     },  "XF86Calculator",   function ()
+                                                                awful.util.spawn("kcalc")
+                                                            end,                            "Calculator key opens KCalc."),
 
     -- Global Keys
     keydoc.group("Global Keys"),
