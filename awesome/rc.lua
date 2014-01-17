@@ -136,7 +136,7 @@ accents = {}
 top_menu = {
     { 'Applications',   	freedesktop.menu.new(),     			freedesktop.utils.lookup_icon({ icon = 'start-here' })  },
     { 'Logout',           	awesome.quit,                 			freedesktop.utils.lookup_icon({ icon = 'system-log-out'     }) },
-    { 'Reboot System',   	'sudo /sbin/reboot now --no-wall', 		freedesktop.utils.lookup_icon({ icon = 'reboot-notifier'    }) },
+    { 'Reboot System',   	'sudo /sbin/reboot', 		            freedesktop.utils.lookup_icon({ icon = 'reboot-notifier'    }) },
     { 'Shutdown System', 	'sudo /sbin/shutdown now --no-wall', 	freedesktop.utils.lookup_icon({ icon = 'system-shutdown'    }) }
 }
 
