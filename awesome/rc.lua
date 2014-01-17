@@ -133,6 +133,7 @@ accents = {}
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 
+
 top_menu = {
     { 'Applications',   	freedesktop.menu.new(),     			freedesktop.utils.lookup_icon({ icon = 'start-here' })  },
     { 'Logout',           	awesome.quit,                 			freedesktop.utils.lookup_icon({ icon = 'system-log-out'     }) },
@@ -300,6 +301,7 @@ globalkeys = awful.util.table.join(
     awful.key({                     },  "Print",    function ()
                                                         awful.util.spawn("ksnapshot")
                                                     end,                                    "PrintScreen Functionality."),
+    awful.key({                     },  "#133",     function () mymainmenu:toggle() end,    "'Windows' key toggles launcher."),
 
     -- Global Keys
     keydoc.group("Global Keys"),
