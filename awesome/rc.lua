@@ -324,9 +324,6 @@ globalkeys = awful.util.table.join(
                                                         awful.client.focus.byidx(1)
                                                         if client.focus then client.focus:raise() end
                                                     end,                                    "Lower focus"),
-    --awful.key({ modkey,             },  "w",        function () 
-    --                                                    mymainmenu:show({keygrabber=true}) 
-    --                                                end,                                    "Show menu"),
 
 
     -- Layout manipulation
