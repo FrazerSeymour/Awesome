@@ -308,6 +308,10 @@ globalkeys = awful.util.table.join(
     awful.key({                     },  "XF86Calculator",   function ()
                                                                 awful.util.spawn("kcalc")
                                                             end,                            "Calculator key opens KCalc."),
+    awful.key({ modkey, "Shift"     },  "Tab",      function ()
+                                                        awful.client.focus.byidx(-1)
+                                                        if client.focus then client.focus:raise() end
+                                                    end,                                    "Moves focus to previous client in tag."),
 
     -- Global Keys
     keydoc.group("Global Keys"),
@@ -464,7 +468,7 @@ clientkeys = awful.util.table.join(
                                                         -- minimized, since minimized clients can't have the focus.
                                                         c.minimized = true
                                                     end,                                    "Minimize client"),
-    awful.key({ modkey,           }, "m",           function (c)
+    awful.key({ modkey,             },  "m",        function (c)
                                                         c.maximized_horizontal = not c.maximized_horizontal
                                                         c.maximized_vertical   = not c.maximized_vertical
                                                     end,                                    "Maximize client")
