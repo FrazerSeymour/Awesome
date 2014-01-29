@@ -1,7 +1,7 @@
-# Frazer's Awesome WM Configuration
+# Frazer's Awesome WM Repo
 
 ## About
-Exactly what it says on the tin, this repo contains a copy of `~/.config/awesome/`, and a Python script that copies my changes and commits for me. The master branch works with my main desktop computer, there will be a 'pi' branch that is compatible with my Raspberry Pi.
+Exactly what it says on the tin, this repo contains a copy of my Awesome Window Manager configurations, themes, and plugins. The master branch works with my main desktop computer (originally openSUSE running KDE), there will be a 'pi' branch that is compatible with my Raspberry Pi (also openSUSE).
 
 ## Dependencies
 My `rc.lua` references the following programs:
