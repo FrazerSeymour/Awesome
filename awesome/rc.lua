@@ -300,6 +300,10 @@ globalkeys = awful.util.table.join(
                                                         awful.util.spawn("chromium --incognito")
                                                         awful.tag.viewonly(tags[1][3])
                                                     end,                                    "Open Incognito Browser"),
+    awful.key({ modkey, "Shift"     },  "p",        function ()
+                                                        awful.util.spawn("kdocker keepass")
+                                                        awful.tag.viewonly(tags[1][3])
+                                                    end,                                    "Open and Dock Password Keeper"),
     awful.key({ modkey,             },  "w",        function ()
                                                         awful.tag.viewonly(tags[1][5])
                                                         awful.util.spawn("plasma-windowed org.kde.networkmanagement")
