@@ -76,6 +76,7 @@ do
 end
 
 awful.util.spawn_with_shell("xcompmgr -cF &")
+awful.util.spawn_with_shell("wuala &")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -303,6 +304,7 @@ globalkeys = awful.util.table.join(
                                                         awful.tag.viewonly(tags[1][5])
                                                         awful.util.spawn("plasma-windowed org.kde.networkmanagement")
                                                     end,                                    "Open NetworkManager"),
+
     awful.key({                     },  "Print",    function ()
                                                         awful.util.spawn("ksnapshot")
                                                     end,                                    "PrintScreen Functionality."),
