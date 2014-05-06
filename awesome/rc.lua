@@ -295,6 +295,10 @@ globalkeys = awful.util.table.join(
                                                         awful.util.spawn("chromium")
                                                         awful.tag.viewonly(tags[1][3])
                                                     end,                                    "Open Browser"),
+    awful.key({ modkey, "Shift"     },  "b",        function ()
+                                                        awful.util.spawn("chromium --incognito")
+                                                        awful.tag.viewonly(tags[1][3])
+                                                    end,                                    "Open Incognito Browser"),
     awful.key({ modkey,             },  "w",        function ()
                                                         awful.tag.viewonly(tags[1][5])
                                                         awful.util.spawn("plasma-windowed org.kde.networkmanagement")
