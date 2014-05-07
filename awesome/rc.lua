@@ -301,7 +301,7 @@ globalkeys = awful.util.table.join(
                                                         awful.tag.viewonly(tags[1][3])
                                                     end,                                    "Open Incognito Browser"),
     awful.key({ modkey, "Shift"     },  "p",        function ()
-                                                        awful.util.spawn("kdocker -d60 -m \"KeePass\" keepass")
+                                                        awful.util.spawn("kdocker -d60 -n 'KeePass' keepass")
                                                     end,                                    "Open and Dock Password Keeper"),
     awful.key({ modkey,             },  "w",        function ()
                                                         awful.tag.viewonly(tags[1][5])
