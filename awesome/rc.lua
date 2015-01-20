@@ -89,6 +89,12 @@ freedesktop.utils.icon_theme = 'gnome'
 -- Default modkey.
 modkey = "Mod1"
 
+-- Table with my two most used layouts, spiral and max.
+minlayouts = {
+    awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.max,
+}
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
@@ -113,8 +119,8 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
     names  = {"main", "vim", "web", "mail", "spare"},
-    layout = {layouts[4], layouts[5], layouts[5],
-            layouts[5], layouts[4]}
+    layout = {minlayouts[1], minlayouts[2], minlayouts[2],
+            minlayouts[2], minlayouts[1]}
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -389,11 +395,11 @@ globalkeys = awful.util.table.join(
                                                         awful.tag.incncol(-1)
                                                     end,                                    "Decrease column"),
     awful.key({ modkey,             },  "space",    function ()
-                                                        awful.layout.inc(layouts,  1)
-                                                    end,                                    "Cycle layout style forward"),
+                                                        awful.layout.inc(minlayouts,  1)
+                                                    end,                                    "Toggle frequently used layout styles"),
     awful.key({ modkey, "Shift"     },  "space",    function ()
-                                                        awful.layout.inc(layouts, -1)
-                                                    end,                                    "Cycle layout style reverse"),
+                                                        awful.layout.inc(layouts, 1)
+                                                    end,                                    "Cycle through all layout styles"),
 
     awful.key({ modkey, "Control"   },  "n",        awful.client.restore,                   "Client restore"),
 
