@@ -76,7 +76,7 @@ do
 end
 
 awful.util.spawn_with_shell("xcompmgr -cF &")
-awful.util.spawn_with_shell("wuala &")
+awful.util.spawn_with_shell("SpiderOak &")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
