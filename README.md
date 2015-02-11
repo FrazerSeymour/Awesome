@@ -1,7 +1,9 @@
 # Frazer's Awesome WM Repo
 
 ## About
-Exactly what it says on the tin, this repo contains a copy of my Awesome Window Manager configurations, themes, and plugins. The master branch works with my main desktop computer (originally openSUSE running KDE), there will be a 'pi' branch that is compatible with my Raspberry Pi (also openSUSE).
+Exactly what it says on the tin, this repo contains a copy of my Awesome Window Manager configurations, themes, and plugins.
+
+Note that the master branch is only used as is on openSUSE 13.1 (and its packaged version of Awesome and the other programs mentioned below), so will probably not work on your machine without some (possibly major) tweaks.
 
 ## Dependencies
 My `rc.lua` references the following programs:
