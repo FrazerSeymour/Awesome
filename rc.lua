@@ -98,9 +98,9 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names  = {"main", "vim", "web", "mail", "spare"},
+    names  = {"main", "vim", "web", "mail", "slack", "spare"},
     layout = {minlayouts[1], minlayouts[2], minlayouts[2],
-            minlayouts[2], minlayouts[1]}
+            minlayouts[2], minlayouts[2], minlayouts[1]}
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
