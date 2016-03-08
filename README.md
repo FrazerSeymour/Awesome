@@ -3,7 +3,7 @@
 ## About
 Exactly what it says on the tin, this repo contains a copy of my Awesome Window Manager configurations, themes, and plugins.
 
-Note that the master branch is only used as is on openSUSE 13.1 (and its packaged version of Awesome and the other programs mentioned below), so will probably not work on your machine without some major tweaks.
+This config is used as-is on my Arch Linux machines, using the latest releases of everything from the pacman repos.
 
 ## Dependencies
 My `rc.lua` references the following programs:
@@ -11,9 +11,9 @@ My `rc.lua` references the following programs:
 * **rxvt-unicode** - terminal of choice
 * **gvim** - editor of choice
 * **chromium** - browser of choice
-* **kde** - I run the WiFi plasmoid in a window
-* **ksnapshot** - mapped to PrtScn
-* **kcalc** - mapped to calculator button
+* **wicd-gtk** - WiFi manager of choice.
+* **spectacle** - mapped to PrtScn
+* **galculator** - mapped to calculator button
 * **SpiderOak**, **KeePass**, and **kdocker** - password manager stack
 
 ## Old Repo History
