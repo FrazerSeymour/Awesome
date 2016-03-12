@@ -234,10 +234,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   },  "p",  function ()
                                                 awful.util.spawn_with_shell(run .. "keepass")
                                             end),
-    awful.key({ modkey,           },  "w",  function ()
-                                                awful.tag.viewonly(tags[1][5])
-                                                awful.util.spawn_with_shell(run .. "wicd-gtk")
-                                            end),
 
     awful.key({                   },  "Print",  function ()
                                                     awful.util.spawn_with_shell(run .. "spectacle")
@@ -249,9 +245,6 @@ globalkeys = awful.util.table.join(
                                                     awful.client.focus.byidx(-1)
                                                     if client.focus then client.focus:raise() end
                                                 end),
-    --awful.key({ modkey, "Shift"     },  "p",        function ()
-    --                                                    awful.util.spawn_with_shell(run .. "kdocker -d60 -n 'KeePass' keepass")
-    --                                                end,                                    "Open and Dock Password Keeper"),
     
     -- Global Keys
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
