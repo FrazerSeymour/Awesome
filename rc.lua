@@ -52,9 +52,15 @@ terminal = "urxvt"
 editor = os.getenv("EDITOR") or os.getenv("VISUAL") or "gvim"
 editor_cmd = terminal .. " -e " .. editor
 
+-- Run scripts
+run = awful.util.getdir("config") .. "/run "
+run_once = awful.util.getdir("config") .. "/run_once "
+
 -- Startups
---awful.util.spawn_with_shell("xcompmgr -cF &")
---awful.util.spawn_with_shell("SpiderOak &")
+awful.util.spawn_with_shell(run_once .. "wicd-client -t &")
+awful.util.spawn_with_shell(run_once .. "cbatticon &")
+awful.util.spawn_with_shell(run_once .. "volumeicon &")
+awful.util.spawn_with_shell(run_once .. "SpiderOakONE &")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -238,37 +244,37 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Custom Bindings
     awful.key({ modkey,           },  "v",  function ()
-                                                awful.util.spawn("gvim")
+                                                awful.util.spawn_with_shell(run .. "gvim")
                                                 awful.tag.viewonly(tags[1][2])
                                             end),
     awful.key({ modkey,           },  "b",  function ()
-                                                awful.util.spawn("chromium")
+                                                awful.util.spawn_with_shell(run .. "chromium")
                                                 awful.tag.viewonly(tags[1][3])
                                             end),
     awful.key({ modkey, "Shift"   },  "b",  function ()
-                                                awful.util.spawn("chromium --incognito")
+                                                awful.util.spawn_with_shell(run .. "chromium --incognito")
                                                 awful.tag.viewonly(tags[1][3])
                                             end),
     awful.key({ modkey, "Shift"   },  "p",  function ()
-                                                awful.util.spawn("keepass")
+                                                awful.util.spawn_with_shell(run .. "keepass")
                                             end),
     awful.key({ modkey,           },  "w",  function ()
                                                 awful.tag.viewonly(tags[1][5])
-                                                awful.util.spawn("wicd-gtk")
+                                                awful.util.spawn_with_shell(run .. "wicd-gtk")
                                             end),
 
     awful.key({                   },  "Print",  function ()
-                                                    awful.util.spawn("spectacle")
+                                                    awful.util.spawn_with_shell(run .. "spectacle")
                                                 end),
     awful.key({                   },  "XF86Calculator", function ()
-                                                            awful.util.spawn("galculator")
+                                                            awful.util.spawn_with_shell(run .. "galculator")
                                                         end),
     awful.key({ modkey, "Shift"   },  "Tab",    function ()
                                                     awful.client.focus.byidx(-1)
                                                     if client.focus then client.focus:raise() end
                                                 end),
     --awful.key({ modkey, "Shift"     },  "p",        function ()
-    --                                                    awful.util.spawn("kdocker -d60 -n 'KeePass' keepass")
+    --                                                    awful.util.spawn_with_shell(run .. "kdocker -d60 -n 'KeePass' keepass")
     --                                                end,                                    "Open and Dock Password Keeper"),
     
     -- Global Keys
@@ -303,7 +309,7 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "Return", function () awful.util.spawn_with_shell(run .. terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
