@@ -442,6 +442,15 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+-- {{{ Accents
+-- Contains the accent colour for each active client, indexed by PID.
+accents = {}
+client.connect_signal("new",    function(c)
+                                    math.randomseed(os.date("%H%M%S"))
+                                    num = math.random(7)
+                                    accent = beautiful.accents[num]
+                                    accents[c] = accent
+                                end)
+client.connect_signal("focus", function(c) c.border_color = accents[c] end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
