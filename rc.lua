@@ -238,16 +238,16 @@ globalkeys = awful.util.table.join(
                                                 awful.util.spawn_with_shell(run .. "keepass")
                                             end),
 
+    awful.key({ modkey, "Shift"   },  "Tab",    function ()
+                                                    awful.client.focus.byidx(-1)
+                                                    if client.focus then client.focus:raise() end
+                                                end),
     awful.key({                   },  "Print",  function ()
                                                     awful.util.spawn_with_shell(run .. "spectacle")
                                                 end),
     awful.key({                   },  "XF86Calculator", function ()
                                                             awful.util.spawn_with_shell(run .. "galculator")
                                                         end),
-    awful.key({ modkey, "Shift"   },  "Tab",    function ()
-                                                    awful.client.focus.byidx(-1)
-                                                    if client.focus then client.focus:raise() end
-                                                end),
     
     -- Global Keys
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
