@@ -13,7 +13,6 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 
-
 local menubar = require("menubar")
 
 -- {{{ Error handling
@@ -45,7 +44,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/default/theme.lua")
+beautiful.init("~/.config/awesome/themes/frazer/theme.lua")
+naughty.config.defaults.position = beautiful.naughty_position
+naughty.config.defaults.margin = beautiful.naughty_margin
+naughty.config.defaults.height = beautiful.naughty_height
+naughty.config.defaults.width = beautiful.naughty_width
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -186,7 +189,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = beautiful.wibox_height })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
