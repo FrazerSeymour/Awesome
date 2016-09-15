@@ -12,7 +12,7 @@ My `rc.lua` references the following programs:
 * **gvim** - editor of choice
 * **chromium** - browser of choice
 * **wicd-gtk** - WiFi manager of choice.
-* **spectacle** - mapped to PrtScn
+* **shutter** - mapped to PrtScn
 * **galculator** - mapped to calculator button
 * **SpiderOak**, **KeePass**, and **kdocker** - password manager stack
 

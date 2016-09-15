@@ -243,7 +243,7 @@ globalkeys = awful.util.table.join(
                                                     if client.focus then client.focus:raise() end
                                                 end),
     awful.key({                   },  "Print",  function ()
-                                                    awful.util.spawn_with_shell(run .. "spectacle")
+                                                    awful.util.spawn_with_shell(run .. "shutter -f")
                                                 end),
     awful.key({                   },  "XF86Calculator", function ()
                                                             awful.util.spawn_with_shell(run .. "galculator")
