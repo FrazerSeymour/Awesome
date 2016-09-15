@@ -243,7 +243,10 @@ globalkeys = awful.util.table.join(
                                                     if client.focus then client.focus:raise() end
                                                 end),
     awful.key({                   },  "Print",  function ()
-                                                    awful.util.spawn_with_shell(run .. "shutter -f")
+                                                    awful.util.spawn_with_shell(run .. "shutter --full --remove_cursor --exit_after_capture --no_session")
+                                                end),
+    awful.key({ modkey            },  "Print",  function ()
+                                                    awful.util.spawn_with_shell(run .. "shutter --select  --remove_cursor --exit_after_capture --no_session")
                                                 end),
     awful.key({                   },  "XF86Calculator", function ()
                                                             awful.util.spawn_with_shell(run .. "galculator")
