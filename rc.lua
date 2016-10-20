@@ -403,6 +403,8 @@ awful.rules.rules = {
         properties = { tag = tags[1][3] } },
     { rule = { class = "Geary" },
         properties = { tag = tags[1][4] } },
+    { rule = { class = "Slack" },
+        properties = { tag = tags[1][5] } },
     { rule = { class = "SpiderOakONE" },
         properties = { tag = tags[1][6] } },
 }
