@@ -13,7 +13,7 @@ My `rc.lua` references the following programs:
 * **rxvt-unicode** - terminal of choice
 * **shutter** - mapped to PrtScn
 * **SparkleShare** - when I'm too lazy to sync git repos
-* **SpiderOakONE**, **KeePass**, and **kdocker** - password manager stack
+* **SpiderOakONE**, **KeePass** - password manager stack
 * **wicd-gtk** - WiFi manager of choice.
 * **xcompmgr** - for transparent terminals
 * **xscreensaver** - screen locker of choice
