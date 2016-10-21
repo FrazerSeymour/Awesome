@@ -14,7 +14,7 @@ My `rc.lua` references the following programs:
 * **wicd-gtk** - WiFi manager of choice.
 * **shutter** - mapped to PrtScn
 * **galculator** - mapped to calculator button
-* **SpiderOak**, **KeePass**, and **kdocker** - password manager stack
+* **SpiderOakONE**, **KeePass**, and **kdocker** - password manager stack
 * **SparkleShare** - when I'm too lazy to sync git repos
 * **xscreensaver** - screen locker of choice
 
