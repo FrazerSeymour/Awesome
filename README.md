@@ -7,15 +7,15 @@ This config is used as-is on my Arch Linux machines, using the latest releases o
 
 ## Dependencies
 My `rc.lua` references the following programs:
-* **xcompmgr** - for transparent terminals
-* **rxvt-unicode** - terminal of choice
-* **gvim** - editor of choice
 * **chromium** - browser of choice
-* **wicd-gtk** - WiFi manager of choice.
-* **shutter** - mapped to PrtScn
 * **galculator** - mapped to calculator button
-* **SpiderOakONE**, **KeePass**, and **kdocker** - password manager stack
+* **gvim** - editor of choice
+* **rxvt-unicode** - terminal of choice
+* **shutter** - mapped to PrtScn
 * **SparkleShare** - when I'm too lazy to sync git repos
+* **SpiderOakONE**, **KeePass**, and **kdocker** - password manager stack
+* **wicd-gtk** - WiFi manager of choice.
+* **xcompmgr** - for transparent terminals
 * **xscreensaver** - screen locker of choice
 
 ## Old Repo History
