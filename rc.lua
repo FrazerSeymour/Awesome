@@ -105,9 +105,9 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names  = {"main", "vim", "web", "mail", "slack", "spare"},
+    names  = {"main", "vim", "web", "talk", "spare"},
     layout = {minlayouts[1], minlayouts[2], minlayouts[2],
-            minlayouts[2], minlayouts[2], minlayouts[1]}
+            minlayouts[2], minlayouts[1]}
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -402,10 +402,10 @@ awful.rules.rules = {
         properties = { tag = tags[1][2] } },
     { rule = { class = "Chromium" },
         properties = { tag = tags[1][3] } },
-    { rule = { class = "Geary" },
+    { rule = { class = "Evolution" },
         properties = { tag = tags[1][4] } },
     { rule = { class = "Slack" },
-        properties = { tag = tags[1][5] } },
+        properties = { tag = tags[1][4] } },
     { rule = { class = "SpiderOakONE" },
         properties = { tag = tags[1][6] } },
 }
