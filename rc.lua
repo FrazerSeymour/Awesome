@@ -55,6 +55,14 @@ naughty.config.presets.normal.opacity = beautiful.naughty_opacity
 naughty.config.presets.critical.opacity = beautiful.naughty_opacity
 
 
+volume_replace = 0
+display_volume = function(arg)
+    volume = io.popen("amixer sget Master | awk -F'[][]' '/dB/ { print \"Volume: \" $".. arg .." }'"):read()
+    naughty.notify({ title = "ALSA",
+                     text = volume,
+                     icon = "/usr/share/icons/Vertex-Icons/apps/48/multimedia-volume-control.svg",
+                     replaces_id = volume_replace})
+end
 brightness_replace = 1
 display_brightness = function()
     brightness = io.popen("xbacklight -get | awk '{ printf \"Brightness: %.0f%%\", $0 }'"):read()
@@ -275,6 +283,18 @@ globalkeys = awful.util.table.join(
     awful.key({                   },  "XF86MonBrightnessDown", function ()
                                                             awful.util.spawn_with_shell(run .. "xbacklight -dec 7.5")
                                                             display_brightness()
+                                                        end),
+    awful.key({                   },  "XF86AudioRaiseVolume", function ()
+                                                            awful.util.spawn_with_shell(run .. "amixer set Master 7.5%+")
+                                                            display_volume("2")
+                                                        end),
+    awful.key({                   },  "XF86AudioLowerVolume", function ()
+                                                            awful.util.spawn_with_shell(run .. "amixer set Master 7.5%-")
+                                                            display_volume("2")
+                                                        end),
+    awful.key({                   },  "XF86AudioMute", function ()
+                                                            awful.util.spawn_with_shell(run .. "amixer set Master toggle")
+                                                            display_volume("5")
                                                         end),
     
     -- Global Keys
