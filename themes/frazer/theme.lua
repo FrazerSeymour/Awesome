@@ -29,8 +29,10 @@ theme.wibox_height = 20
 
 theme.naughty_position = "bottom_right"
 theme.naughty_margin = 20
-theme.naughty_height = 80
+theme.naughty_icon_size = 48
+theme.naughty_height = 88
 theme.naughty_width = 500
+theme.naughty_opacity = 0.80
 
 -- Display the taglist squares
 theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"

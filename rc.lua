@@ -49,6 +49,10 @@ naughty.config.defaults.position = beautiful.naughty_position
 naughty.config.defaults.margin = beautiful.naughty_margin
 naughty.config.defaults.height = beautiful.naughty_height
 naughty.config.defaults.width = beautiful.naughty_width
+naughty.config.defaults.icon_size = beautiful.naughty_icon_size
+naughty.config.presets.low.opacity = beautiful.naughty_opacity
+naughty.config.presets.normal.opacity = beautiful.naughty_opacity
+naughty.config.presets.critical.opacity = beautiful.naughty_opacity
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
