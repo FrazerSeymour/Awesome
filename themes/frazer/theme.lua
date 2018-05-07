@@ -1,6 +1,6 @@
 theme = {}
 
-theme.font          = "SourceSansPro 11"
+theme.font          = "SourceSansPro 12"
 
 theme.bg_normal     = "#000000"
 theme.bg_inactive   = "#2a2a2a"

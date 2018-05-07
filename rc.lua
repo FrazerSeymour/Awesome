@@ -96,7 +96,7 @@ modkey = "Mod4"
 -- Table with my two most used layouts, spiral and max.
 minlayouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.max,
+    awful.layout.suit.max
 }
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
