@@ -247,6 +247,10 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- Custom Bindings
+    awful.key({ modkey, "Shift"   },  "q",  function ()
+                                                awful.util.spawn_with_shell(run .. "xscreensaver-command -lock")
+                                            end),
+
     awful.key({ modkey,           },  "v",  function ()
                                                 awful.util.spawn_with_shell(run .. "gvim")
                                                 awful.tag.viewonly(tags[1][2])
