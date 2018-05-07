@@ -54,6 +54,17 @@ naughty.config.presets.low.opacity = beautiful.naughty_opacity
 naughty.config.presets.normal.opacity = beautiful.naughty_opacity
 naughty.config.presets.critical.opacity = beautiful.naughty_opacity
 
+
+brightness_replace = 1
+display_brightness = function()
+    brightness = io.popen("xbacklight -get | awk '{ printf \"Brightness: %.0f%%\", $0 }'"):read()
+    naughty.notify({ title = "xbacklight",
+                     text = brightness,
+                     icon = "/usr/share/icons/Vertex-Icons/status/symbolic/display-brightness-symbolic.svg",
+                     replaces_id = brightness_replace})
+end
+
+
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or os.getenv("VISUAL") or "gvim"
@@ -256,6 +267,14 @@ globalkeys = awful.util.table.join(
                                                 end),
     awful.key({                   },  "XF86Calculator", function ()
                                                             awful.util.spawn_with_shell(run .. "galculator")
+                                                        end),
+    awful.key({                   },  "XF86MonBrightnessUp", function ()
+                                                            awful.util.spawn_with_shell(run .. "xbacklight -inc 7.5")
+                                                            display_brightness()
+                                                        end),
+    awful.key({                   },  "XF86MonBrightnessDown", function ()
+                                                            awful.util.spawn_with_shell(run .. "xbacklight -dec 7.5")
+                                                            display_brightness()
                                                         end),
     
     -- Global Keys
