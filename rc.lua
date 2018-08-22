@@ -145,8 +145,9 @@ end
 local location = 2 - (screen.count() % 2)
 for t = 4,5 do
     awful.tag.add(tagDefinitions.names[t], {
-        layout  = tagDefinitions.layouts[t],
-        screen  = location
+        layout      = tagDefinitions.layouts[t],
+        screen      = location,
+        selected    = (location == 2 and t == 4)
     })
 end
 tags = root.tags()
