@@ -127,15 +127,29 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {
+tagDefinitions = {
     names  = {"main", "vim", "web", "talk", "spare"},
-    layout = {minlayouts[1], minlayouts[2], minlayouts[2],
+    layouts = {minlayouts[1], minlayouts[2], minlayouts[2],
             minlayouts[2], minlayouts[1]}
 }
-for s = 1, screen.count() do
-    -- Each screen has its own tag table.
-    tags[s] = awful.tag(tags.names, s, tags.layout)
+-- First three tags go on first screen.
+for t = 1,3 do
+    awful.tag.add(tagDefinitions.names[t], {
+        layout      = tagDefinitions.layouts[t],
+        screen      = 1,
+        selected    = (t == 1)
+    })
 end
+-- Last two tags go on last screen, if present.
+-- location == 2 if number of screens is even, 1 if odd. Doesn't scale beyond two monitors.
+local location = 2 - (screen.count() % 2)
+for t = 4,5 do
+    awful.tag.add(tagDefinitions.names[t], {
+        layout  = tagDefinitions.layouts[t],
+        screen  = location
+    })
+end
+tags = root.tags()
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -379,17 +393,15 @@ for i = 1, 9 do
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        local screen = mouse.screen
-                        local tag = awful.tag.gettags(screen)[i]
-                        if tag then
-                           awful.tag.viewonly(tag)
-                        end
+                      local tag = awful.tag.find_by_name(nil, tagDefinitions.names[i])
+                      if tag then
+                          awful.tag.viewonly(tag)
+                      end
                   end),
         -- Toggle tag.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
-                      local screen = mouse.screen
-                      local tag = awful.tag.gettags(screen)[i]
+                      local tag = awful.tag.find_by_name(nil, tagDefinitions.names[i])
                       if tag then
                          awful.tag.viewtoggle(tag)
                       end
@@ -398,7 +410,7 @@ for i = 1, 9 do
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          local tag = awful.tag.gettags(client.focus.screen)[i]
+                          local tag = awful.tag.gettags(screen)[i]
                           if tag then
                               awful.client.movetotag(tag)
                           end
