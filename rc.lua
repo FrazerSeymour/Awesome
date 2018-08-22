@@ -54,6 +54,13 @@ naughty.config.presets.low.opacity = beautiful.naughty_opacity
 naughty.config.presets.normal.opacity = beautiful.naughty_opacity
 naughty.config.presets.critical.opacity = beautiful.naughty_opacity
 
+-- Compilation will fail if I remove one of these, instead of using
+-- magic strings.
+TAGNAME_MAIN = "main"
+TAGNAME_VIM = "vim"
+TAGNAME_WEB = "web"
+TAGNAME_TALK = "talk"
+TAGNAME_SPARE = "spare"
 
 volume_replace = 0
 display_volume = function(arg)
@@ -128,9 +135,8 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tagDefinitions = {
-    names  = {"main", "vim", "web", "talk", "spare"},
-    layouts = {minlayouts[1], minlayouts[2], minlayouts[2],
-            minlayouts[2], minlayouts[1]}
+    names  = {TAGNAME_MAIN, TAGNAME_VIM, TAGNAME_WEB, TAGNAME_TALK, TAGNAME_SPARE},
+    layouts = {minlayouts[1], minlayouts[2], minlayouts[2], minlayouts[2], minlayouts[1]}
 }
 -- First three tags go on first screen.
 for t = 1,3 do
@@ -150,7 +156,13 @@ for t = 4,5 do
         selected    = (location == 2 and t == 4)
     })
 end
-tags = root.tags()
+tagTable = {
+    [TAGNAME_MAIN] = awful.tag.find_by_name(nil, TAGNAME_MAIN),
+    [TAGNAME_VIM] = awful.tag.find_by_name(nil, TAGNAME_VIM),
+    [TAGNAME_WEB] = awful.tag.find_by_name(nil, TAGNAME_WEB),
+    [TAGNAME_TALK] = awful.tag.find_by_name(nil, TAGNAME_TALK),
+    [TAGNAME_SPARE] = awful.tag.find_by_name(nil, TAGNAME_SPARE),
+}
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -268,7 +280,7 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey,           },  "v",  function ()
                                                 awful.util.spawn_with_shell(run .. "gvim")
-                                                awful.tag.viewonly(tags[1][2])
+                                                awful.tag.viewonly(tagTable[TAGNAME_VIM])
                                             end),
     awful.key({ modkey,           },  "b",  function ()
                                                 awful.util.spawn_with_shell(run .. "chromium")
@@ -459,15 +471,13 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
         properties = { floating = true } },
     { rule = { class = "Gvim" } ,
-        properties = { tag = tags[1][2] } },
-    { rule = { class = "Chromium" },
-        properties = { tag = tags[1][3] } },
+        properties = { tag = tagTable[TAGNAME_VIM] } },
+    { rule = { class = "Chrome" },
+        properties = { tag = tagTable[TAGNAME_WEB] } },
     { rule = { class = "Evolution" },
-        properties = { tag = tags[1][4] } },
+        properties = { tag = tagTable[TAGNAME_TALK] } },
     { rule = { class = "Slack" },
-        properties = { tag = tags[1][4] } },
-    { rule = { class = "SpiderOakONE" },
-        properties = { tag = tags[1][6] } },
+        properties = { tag = tagTable[TAGNAME_TALK] } }
 }
 -- }}}
 
