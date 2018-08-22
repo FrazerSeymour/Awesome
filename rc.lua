@@ -411,7 +411,7 @@ for i = 1, 9 do
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          local tag = awful.tag.gettags(screen)[i]
+                          local tag = awful.tag.find_by_name(nil, tagDefinitions.names[i])
                           if tag then
                               awful.client.movetotag(tag)
                           end
