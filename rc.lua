@@ -90,7 +90,7 @@ run = awful.util.getdir("config") .. "/run "
 run_once = awful.util.getdir("config") .. "/run_once "
 
 -- Startups
-awful.util.spawn_with_shell(run_once .. "xscreensaver -no-splash &")
+--awful.util.spawn_with_shell(run_once .. "xscreensaver -no-splash &")
 awful.util.spawn_with_shell(run_once .. "wicd-client -t &")
 awful.util.spawn_with_shell(run_once .. "cbatticon &")
 awful.util.spawn_with_shell(run_once .. "volumeicon &")
@@ -275,7 +275,7 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Custom Bindings
     awful.key({ modkey, "Shift"   },  "q",  function ()
-                                                awful.util.spawn_with_shell(run .. "xscreensaver-command -lock")
+                                                awful.util.spawn_with_shell(run .. "systemctl suspend")
                                             end),
 
     awful.key({ modkey,           },  "v",  function ()
