@@ -284,11 +284,11 @@ globalkeys = awful.util.table.join(
                                             end),
     awful.key({ modkey,           },  "b",  function ()
                                                 awful.util.spawn_with_shell(run .. "google-chrome-stable")
-                                                awful.tag.viewonly(tags[1][3])
+                                                awful.tag.viewonly(tagTable[TAGNAME_WEB])
                                             end),
     awful.key({ modkey, "Shift"   },  "b",  function ()
                                                 awful.util.spawn_with_shell(run .. "google-chrome-stable --incognito")
-                                                awful.tag.viewonly(tags[1][3])
+                                                awful.tag.viewonly(tagTable[TAGNAME_WEB])
                                             end),
 
     awful.key({ modkey, "Shift"   },  "Tab",    function ()
