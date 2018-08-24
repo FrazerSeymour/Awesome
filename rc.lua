@@ -290,9 +290,6 @@ globalkeys = awful.util.table.join(
                                                 awful.util.spawn_with_shell(run .. "google-chrome-stable --incognito")
                                                 awful.tag.viewonly(tags[1][3])
                                             end),
-    awful.key({ modkey, "Shift"   },  "p",  function ()
-                                                awful.util.spawn_with_shell(run .. "keepass")
-                                            end),
 
     awful.key({ modkey, "Shift"   },  "Tab",    function ()
                                                     awful.client.focus.byidx(-1)
