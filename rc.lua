@@ -283,11 +283,11 @@ globalkeys = awful.util.table.join(
                                                 awful.tag.viewonly(tagTable[TAGNAME_VIM])
                                             end),
     awful.key({ modkey,           },  "b",  function ()
-                                                awful.util.spawn_with_shell(run .. "chromium")
+                                                awful.util.spawn_with_shell(run .. "google-chrome-stable")
                                                 awful.tag.viewonly(tags[1][3])
                                             end),
     awful.key({ modkey, "Shift"   },  "b",  function ()
-                                                awful.util.spawn_with_shell(run .. "chromium --incognito")
+                                                awful.util.spawn_with_shell(run .. "google-chrome-stable --incognito")
                                                 awful.tag.viewonly(tags[1][3])
                                             end),
     awful.key({ modkey, "Shift"   },  "p",  function ()
