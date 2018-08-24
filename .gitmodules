@@ -1,0 +1,4 @@
+[submodule "awesome-wm-widgets"]
+	path = awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets
+	branch = master
