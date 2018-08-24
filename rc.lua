@@ -100,6 +100,9 @@ awful.util.spawn_with_shell(run_once .. "SparkleShare &")
 -- Default modkey.
 modkey = "Mod4"
 
+-- Query icons to speed up first menubar run.
+menubar.menu_gen.lookup_category_icons = function() end
+
 -- Table with my two most used layouts, spiral and max.
 minlayouts = {
     awful.layout.suit.tile,
