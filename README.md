@@ -17,6 +17,3 @@ My `rc.lua` references the following programs:
 * **wicd-gtk** - WiFi manager of choice.
 * **xcompmgr** - for transparent terminals
 * **xscreensaver** - screen locker of choice
-
-## Old Repo History
-I originally stored my configuration in an Hg repo on BitBucket. I tried exporting the repo, but to no avail, so my first few commits are unavailable here. If they are ever needed, the old repo is still up at this link: https://bitbucket.org/FrazerS/awesome-stuff
