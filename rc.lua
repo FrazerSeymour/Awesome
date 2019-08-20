@@ -92,10 +92,6 @@ run_once = awful.util.getdir("config") .. "/run_once "
 -- Startups
 --awful.util.spawn_with_shell(run_once .. "xscreensaver -no-splash &")
 awful.util.spawn_with_shell(run_once .. "wicd-client -t &")
-awful.util.spawn_with_shell(run_once .. "cbatticon &")
-awful.util.spawn_with_shell(run_once .. "volumeicon &")
-awful.util.spawn_with_shell(run_once .. "SpiderOakONE &")
-awful.util.spawn_with_shell(run_once .. "SparkleShare &")
 
 -- Default modkey.
 modkey = "Mod4"
