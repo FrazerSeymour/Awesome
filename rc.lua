@@ -278,7 +278,7 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Custom Bindings
     awful.key({ modkey, "Shift"   },  "q",  function ()
-                                                awful.util.spawn_with_shell(run .. "systemctl suspend")
+                                                awful.util.spawn_with_shell(run .. "systemctl suspend-then-hibernate")
                                             end),
 
     awful.key({ modkey,           },  "v",  function ()
