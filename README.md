@@ -12,8 +12,5 @@ My `rc.lua` references the following programs:
 * **gvim** - editor of choice
 * **rxvt-unicode** - terminal of choice
 * **shutter** - mapped to PrtScn
-* **SparkleShare** - when I'm too lazy to sync git repos
-* **SpiderOakONE**, **KeePass** - password manager stack
 * **wicd-gtk** - WiFi manager of choice.
 * **xcompmgr** - for transparent terminals
-* **xscreensaver** - screen locker of choice
